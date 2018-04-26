@@ -15,9 +15,12 @@ public class DataFile extends BaseClass{
 		super(driver);
 	}
 
+	public String path = prop.getProperty("excelDataFilePath");
+	
 	public void openExcelFile()throws Exception { 
 		try {
-	      File file = new File("/home/chetan/eclipse-workspace/KISANCHAT/src/test/java/TestData/ExcelData.xlsx");
+		
+	      File file = new File(System.getProperty("user.dir")+path);
 	      FileInputStream fis = new FileInputStream(file);
 	      
 	      //Get the workbook instance for XLSX file 
@@ -37,7 +40,7 @@ public class DataFile extends BaseClass{
 
 	public String readTextInput(String sheetName, int RowNum, int ColNum)throws Exception {
 		
-		  File file = new File("/home/chetan/eclipse-workspace/KISANCHAT/src/test/java/TestData/ExcelData.xlsx");
+		  File file = new File(System.getProperty("user.dir")+path);
 	      FileInputStream fis = new FileInputStream(file);
 	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
@@ -58,7 +61,7 @@ public class DataFile extends BaseClass{
 	
 	public double readNumberInput(String sheetName, int RowNum, int ColNum)throws Exception {
 		
-		  File file = new File("/home/chetan/eclipse-workspace/KISANCHAT/src/test/java/TestData/ExcelData.xlsx");
+		  File file = new File(System.getProperty("user.dir")+path);
 	      FileInputStream fis = new FileInputStream(file);
 	      
 	      XSSFWorkbook workbook = new XSSFWorkbook(fis);

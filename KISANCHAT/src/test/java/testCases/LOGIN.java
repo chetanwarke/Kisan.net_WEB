@@ -11,9 +11,10 @@ import utility.BrowserFactory;
 public class LOGIN extends BrowserFactory{
 	
 	@BeforeTest
-		public void launchBrowser() {
+		public void launchBrowser() throws Exception {
+		SetProperties();
 		chromeBrowser();
-		driver.get("http://net.kisan.co.in.s3-website.ap-south-1.amazonaws.com/#/select-language");
+		driver.get(prop.getProperty("baseUrlPath"));
 	}
 
 	@Test
