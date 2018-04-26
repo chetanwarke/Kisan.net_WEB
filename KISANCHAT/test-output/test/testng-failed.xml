@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [test]">
+  <test name="LIST_CHANNELS (failed)">
+    <classes>
+      <class name="testCases.LIST_CHANNELS">
+        <methods>
+          <include name="channelList"/>
+        </methods>
+      </class> <!-- testCases.LIST_CHANNELS -->
+      <class name="testCases.LOGIN">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="defaultContent"/>
+        </methods>
+      </class> <!-- testCases.LOGIN -->
+    </classes>
+  </test> <!-- LIST_CHANNELS (failed) -->
+</suite> <!-- Failed suite [test] -->
