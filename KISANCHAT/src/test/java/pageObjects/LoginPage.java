@@ -43,10 +43,7 @@ public class LoginPage extends BaseClass{
 	//set user mobile number
 	public void set_enterIFrameMobile() throws Exception {
 		driver.findElement(enterIFrameMobile).click();
-		DataFile input = new DataFile(driver);
-//		input.openExcelFile();
-		
-		String mobNumber = input.readTextInput("Login",1,0);	//readNumberInput(rowID, colID)
+		String mobNumber = readTextInput("Login",1,0);	//readNumberInput(rowID, colID)
 		setText(enterIFrameMobile, mobNumber);
 	}
 	//Click on Next button after entering mobile number

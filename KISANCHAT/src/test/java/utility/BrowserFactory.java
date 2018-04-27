@@ -29,8 +29,6 @@ public class BrowserFactory{
 	public void firefoxBrowser() {
 		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/browser-drivers/geckodriver");
 		driver =  new FirefoxDriver();
-		driver.get("http://net.kisan.co.in.s3-website.ap-south-1.amazonaws.com/#/select-language");
-		
 	}
 
 }

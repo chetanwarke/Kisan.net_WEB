@@ -28,7 +28,7 @@ public class LeftDrawer extends BaseClass {
 	
 	public void click_closeBtn() {
 		waitTillElementPresent(closeBtn);
-		driver.findElement(closeBtn).click();
+		driver.findElement(closeBtn).click(); 
 	}
 	
 	public void click_userProfileImage() {

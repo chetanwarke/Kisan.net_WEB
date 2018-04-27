@@ -1,33 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="1" failed="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="test" duration-ms="326182" started-at="2018-04-26T12:33:15Z" finished-at="2018-04-26T12:38:42Z">
+  <suite name="test" duration-ms="46649" started-at="2018-04-27T11:32:20Z" finished-at="2018-04-27T11:33:07Z">
     <groups>
     </groups>
-    <test name="Login " duration-ms="74565" started-at="2018-04-26T12:33:15Z" finished-at="2018-04-26T12:34:30Z">
+    <test name="Login " duration-ms="42458" started-at="2018-04-27T11:32:20Z" finished-at="2018-04-27T11:33:03Z">
       <class name="testCases.LOGIN">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.LOGIN@be64738]" name="launchBrowser" is-config="true" duration-ms="14199" started-at="2018-04-26T18:03:15Z" finished-at="2018-04-26T18:03:30Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.LOGIN@3532ec19]" name="launchBrowser" is-config="true" duration-ms="5584" started-at="2018-04-27T17:02:20Z" finished-at="2018-04-27T17:02:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="loginSteps()[pri:0, instance:testCases.LOGIN@be64738]" name="loginSteps" duration-ms="52639" started-at="2018-04-26T18:03:30Z" finished-at="2018-04-26T18:04:22Z">
+        <test-method status="PASS" signature="loginSteps()[pri:0, instance:testCases.LOGIN@3532ec19]" name="loginSteps" duration-ms="34852" started-at="2018-04-27T17:02:26Z" finished-at="2018-04-27T17:03:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSteps -->
-        <test-method status="PASS" signature="defaultContent()[pri:0, instance:testCases.LOGIN@be64738]" name="defaultContent" is-config="true" duration-ms="7715" started-at="2018-04-26T18:04:22Z" finished-at="2018-04-26T18:04:30Z">
+        <test-method status="PASS" signature="defaultContent()[pri:0, instance:testCases.LOGIN@3532ec19]" name="defaultContent" is-config="true" duration-ms="2008" started-at="2018-04-27T17:03:01Z" finished-at="2018-04-27T17:03:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- defaultContent -->
       </class> <!-- testCases.LOGIN -->
     </test> <!-- Login  -->
-    <test name="LIST_CHANNELS " duration-ms="251601" started-at="2018-04-26T12:34:30Z" finished-at="2018-04-26T12:38:42Z">
-      <class name="testCases.LIST_CHANNELS">
-        <test-method status="PASS" signature="channelList()[pri:0, instance:testCases.LIST_CHANNELS@41e36e46]" name="channelList" duration-ms="251599" started-at="2018-04-26T18:04:30Z" finished-at="2018-04-26T18:08:42Z">
+    <test name="CREATE_COMMUNITY " duration-ms="4174" started-at="2018-04-27T11:33:03Z" finished-at="2018-04-27T11:33:07Z">
+      <class name="testCases.CREATE_COMMUNITY">
+        <test-method status="FAIL" signature="onMychat()[pri:0, instance:testCases.CREATE_COMMUNITY@31ef45e3]" name="onMychat" is-config="true" duration-ms="0" started-at="2018-04-27T17:03:03Z" finished-at="2018-04-27T17:03:03Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"div[class='loadingoverlay']"}
+  (Session info: chrome=66.0.3359.117)
+  (Driver info: chromedriver=2.35.528139 (47ead77cb35ad2a9a83248b292151462a66cd881),platform=Linux 4.13.0-39-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 32 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'chetan-desktop', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.13.0-39-generic', java.version: '1.8.0_162'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528139 (47ead77cb35ad2a9a83248b292151462a66cd881), userDataDir=/tmp/.org.chromium.Chromium.y0q2Kg}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=66.0.3359.117, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: de0d232ce55c154e595b0ac6bad138e7
+*** Element info: {Using=css selector, value=div[class='loadingoverlay']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"div[class='loadingoverlay']"}
+  (Session info: chrome=66.0.3359.117)
+  (Driver info: chromedriver=2.35.528139 (47ead77cb35ad2a9a83248b292151462a66cd881),platform=Linux 4.13.0-39-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 32 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'chetan-desktop', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.13.0-39-generic', java.version: '1.8.0_162'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528139 (47ead77cb35ad2a9a83248b292151462a66cd881), userDataDir=/tmp/.org.chromium.Chromium.y0q2Kg}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=66.0.3359.117, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: de0d232ce55c154e595b0ac6bad138e7
+*** Element info: {Using=css selector, value=div[class='loadingoverlay']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:638)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:468)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at utility.BaseClass.waitForLoaderClose(BaseClass.java:62)
+	at pageObjects.WelcomeDashboardPage.click_leftDrawerBtn(WelcomeDashboardPage.java:47)
+	at testCases.CREATE_COMMUNITY.onMychat(CREATE_COMMUNITY.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
+	at org.testng.TestRunner.run(TestRunner.java:609)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- channelList -->
-      </class> <!-- testCases.LIST_CHANNELS -->
-    </test> <!-- LIST_CHANNELS  -->
+        </test-method> <!-- onMychat -->
+        <test-method status="SKIP" signature="createChnl()[pri:0, instance:testCases.CREATE_COMMUNITY@31ef45e3]" name="createChnl" duration-ms="0" started-at="2018-04-27T17:03:07Z" finished-at="2018-04-27T17:03:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createChnl -->
+      </class> <!-- testCases.CREATE_COMMUNITY -->
+    </test> <!-- CREATE_COMMUNITY  -->
   </suite> <!-- test -->
 </testng-results>

@@ -6,9 +6,15 @@
 			<class name="testCases.LOGIN"></class>
 		</classes>
 	</test>
-	<test name = "LIST_CHANNELS ">
+<!-- 	<test name = "LIST_CHANNELS "> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testCases.LIST_CHANNELS"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	<test name = "CREATE_COMMUNITY ">
 		<classes>
-			<class name="testCases.LIST_CHANNELS"></class>
+			<class name="testCases.CREATE_COMMUNITY"></class>
 		</classes>
 	</test>
 	</suite>
+	

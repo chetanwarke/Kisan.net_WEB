@@ -1,31 +1,84 @@
 package utility;
 
+import java.io.File;
+import java.io.FileInputStream;
+
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseClass extends BrowserFactory{
-	//public WebDriver driver;
 	//constructor
 	public BaseClass(WebDriver driver) {
 		this.driver = driver;
 	}
-	// wait for element to appears
-	public WebDriverWait waitTillElementPresent(By locator) {
+	// set property of excel data file 
+	public String path = prop.getProperty("excelDataFilePath");
+	// read text input from excel sheet
+	public String readTextInput(String sheetName, int RowNum, int ColNum)throws Exception {
 		
+		  File file = new File(System.getProperty("user.dir")+path);
+	      FileInputStream fis = new FileInputStream(file);
+	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
+	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
+	      XSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);	
+	      
+	        DataFormatter dataFormatter = new DataFormatter();
+	        String cellData = dataFormatter.formatCellValue(cell);
+			return cellData;
+	}
+	//read number input from excel sheet
+	public double readNumberInput(String sheetName, int RowNum, int ColNum)throws Exception {
+		
+		  File file = new File(System.getProperty("user.dir")+path);
+	      FileInputStream fis = new FileInputStream(file);
+	      
+	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
+	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
+	      XSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);
+	      
+	      if(cell == null)
+	        {
+	            System.out.println("finding cell in sheet is null ");
+	        }
+	        else if(cell.getCellType() == XSSFCell.CELL_TYPE_STRING)
+	        {
+	            System.out.println("finding number is text ");
+	        }  
+	      
+			double cellData = cell.getNumericCellValue();
+			return cellData;
+	}
+	//wait for loader to close
+	public WebDriverWait waitForLoaderClose(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebElement loader = driver.findElement(By.cssSelector("div[class='loadingoverlay']"));
+		if(loader.isDisplayed()) {
+			wait.until(ExpectedConditions.invisibilityOf(loader));
+		}else
+		{
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		}
+		return wait;
+	}
+	
+	// wait for element to appears
+	public WebDriverWait waitTillElementPresent(By locator){
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-//		wait.until(ExpectedConditions.presenceOfElementLocated((By) we));
 		return wait;
 	}
 	// wait for element to be clickable
-	public WebDriverWait waitTillElementClickable(By locator) {
-		
+	public WebDriverWait waitTillElementClickable(By locator){
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
-//		wait.until(ExpectedConditions.elementToBeClickable((By) we));
 		return wait;
 	}
 	// submit/enter text in text field/text area

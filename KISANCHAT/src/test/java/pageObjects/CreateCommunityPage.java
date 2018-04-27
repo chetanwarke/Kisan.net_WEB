@@ -46,12 +46,15 @@ public class CreateCommunityPage extends BaseClass {
     
     public void click_colorBucket() {
     	waitTillElementPresent(colorBucket);
-    	driver.findElement(colorBucket);
+    	driver.findElement(colorBucket).click();
     }
     
-    public void set_colorBucketCode() {
+    public void set_colorBucketHexCode() throws Exception {
     	waitTillElementPresent(colorBucketCode);
-    	driver.findElement(colorBucketCode);
+    	driver.findElement(colorBucketCode).click();
+    	driver.findElement(colorBucketCode).clear();
+    	String hexCode = readTextInput("Channel", 1, 3);
+    	setText(colorBucketCode, hexCode);
     }
     
     public void click_colorBucketOkBtn() {
