@@ -16,7 +16,7 @@ public class LoginPage extends BaseClass{
 	By enterIFrameMobile = By.cssSelector("input[name=\"phone_number\"]");
 	By next = By.xpath("//*[@id=\"u_0_6r\"]");//button[contains(text(),'Next')]
 	By continueOTP = By.xpath("//*[@id=\"u_0_4\"]");//button[contains(text(),'Continue')]
-	String country = "India";
+//	String country = "India";
 	
 	//constructor
 	public LoginPage(WebDriver driver) {

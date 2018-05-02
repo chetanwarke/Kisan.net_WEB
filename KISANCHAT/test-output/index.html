@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-test">
-              <span class="suite-name border-skipped">test</span>
+              <span class="suite-name border-passed">test</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,21 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,  1 skipped,  1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-test" class="hide-methods skipped suite-test"> (hide)</a> <!-- hide-methods skipped suite-test -->
-                      <a href="#" panel-name="suite-test" class="show-methods skipped suite-test"> (show)</a> <!-- show-methods skipped suite-test -->
-                    </span>
-                    <div class="method-list-content skipped suite-test">
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-test" title="testCases.CREATE_COMMUNITY" hash-for-method="createChnl">createChnl</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-test -->
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -113,6 +99,11 @@
                       <a href="#" panel-name="suite-test" class="show-methods passed suite-test"> (show)</a> <!-- show-methods passed suite-test -->
                     </span>
                     <div class="method-list-content passed suite-test">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-test" title="testCases.CREATE_COMMUNITY" hash-for-method="createChnl">createChnl</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-test" title="testCases.LOGIN" hash-for-method="loginSteps">loginSteps</a> <!-- method navigator-link -->
@@ -130,21 +121,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-test" class="panel test">
-          <div class="suite-test-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">testCases.CREATE_COMMUNITY</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="createChnl">
-                  </a> <!-- createChnl -->
-                  <span class="method-name">createChnl</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-test-class-skipped -->
           <div class="suite-test-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -156,6 +132,21 @@
                   <a name="loginSteps">
                   </a> <!-- loginSteps -->
                   <span class="method-name">loginSteps</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-test-class-passed -->
+          <div class="suite-test-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testCases.CREATE_COMMUNITY</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createChnl">
+                  </a> <!-- createChnl -->
+                  <span class="method-name">createChnl</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -224,16 +215,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginSteps')
 data.setCell(0, 2, 'testCases.LOGIN')
-data.setCell(0, 3, 34852);
+data.setCell(0, 3, 35244);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'createChnl')
 data.setCell(1, 2, 'testCases.CREATE_COMMUNITY')
-data.setCell(1, 3, 0);
+data.setCell(1, 3, 9052);
 window.suiteTableData['test']= { tableData: data, tableDiv: 'times-div-test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 34 seconds</span>
+              <span class="suite-total-time">Total running time: 44 seconds</span>
               <div id="times-div-test">
               </div> <!-- times-div-test -->
             </div> <!-- times-div -->
@@ -266,24 +257,22 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">loginSteps</span>
-                <span class="method-start">5590 ms</span>
+                <span class="method-start">20924 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">defaultContent</span>
-                <span class="method-start">40446 ms</span>
+                <span class="method-start">56171 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testCases.CREATE_COMMUNITY</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">onMychat</span>
-                <span class="method-start">42471 ms</span>
+                <span class="method-start">58192 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">createChnl</span>
-                <span class="method-start">46642 ms</span>
+                <span class="method-start">66397 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

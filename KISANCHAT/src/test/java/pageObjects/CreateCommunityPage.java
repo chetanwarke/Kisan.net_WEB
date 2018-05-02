@@ -16,7 +16,7 @@ public class CreateCommunityPage extends BaseClass {
 	By nextBtn = By.cssSelector("#header > div > mat-list > mat-list-item:nth-child(2) > div > a");
 	By chnlImage = By.cssSelector("#myImg");
 	By channelName = By.cssSelector("#channelName");
-	By colorBucket = By.cssSelector("#greenColorBody > section > div > div.backColorBucket.mrgn-t-md.pad-t-sm");
+	By colorBucket = By.cssSelector("div[class='colorBucket']");
 	By colorBucketCode = By.cssSelector("#greenColorBody > section > div > div.backColorBucket.mrgn-t-md.pad-t-sm > color-picker > div > div.hex-text.ng-star-inserted > div:nth-child(1) > input");
 	By colorBucketOkBtn = By.cssSelector("#greenColorBody > section > div > div.backColorBucket.mrgn-t-md.pad-t-sm > color-picker > div > div.button-area.ng-star-inserted > button.colorPickerBtn1.ng-star-inserted");
 	By colrBucketCancelBtn = By.cssSelector("#greenColorBody > section > div > div.backColorBucket.mrgn-t-md.pad-t-sm > color-picker > div > div.button-area.ng-star-inserted > button.colorPickerBtn2.ng-star-inserted");
@@ -59,12 +59,12 @@ public class CreateCommunityPage extends BaseClass {
     
     public void click_colorBucketOkBtn() {
     	waitTillElementPresent(colorBucketOkBtn);
-    	driver.findElement(colorBucketOkBtn);
+    	driver.findElement(colorBucketOkBtn).click();
     }
     
     public void click_colrBucketCancelBtn() {
     	waitTillElementPresent(colrBucketCancelBtn);
-    	driver.findElement(colrBucketCancelBtn);
+    	driver.findElement(colrBucketCancelBtn).click();
     }
 
 }

@@ -43,9 +43,9 @@ public class WelcomeDashboardPage extends BaseClass{
 	}
 	
 	public void click_leftDrawerBtn() {
-		BaseClass bc = new BaseClass(driver);
-		bc.waitForLoaderClose(leftDrawerBtn);
-		//waitTillElementClickable(leftDrawerBtn);
+//		BaseClass bc = new BaseClass(driver);
+//		bc.waitForLoaderClose(leftDrawerBtn);
+		waitTillElementClickable(leftDrawerBtn);
 		driver.findElement(leftDrawerBtn).click();
 	}
 	
