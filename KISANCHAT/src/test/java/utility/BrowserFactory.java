@@ -1,12 +1,14 @@
 package utility;
 
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BrowserFactory{
 	public static WebDriver driver;
@@ -21,11 +23,18 @@ public class BrowserFactory{
 	public void chromeBrowser(){
 		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+prop.getProperty("chromedriverPath"));
 		String chromeProfilePath = prop.getProperty("chromeProfilePath");
-		ChromeOptions chromeProfile = new ChromeOptions();
+//		ChromeOptions chromeProfile = new ChromeOptions();
 //		chromeProfile.addArguments("chrome.switches", "--disable-extensions");
-		chromeProfile.addArguments("user-data-dir=" + chromeProfilePath);
+//		chromeProfile.addArguments("user-data-dir=" + chromeProfilePath);
+//		driver = new ChromeDriver(chromeProfile);
+		
+		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		ArrayList<String> switches = new ArrayList<String>();
+		switches.add("--user-data-dir=" + chromeProfilePath);
+		capabilities.setCapability("chrome.switches", switches);
+		driver = new ChromeDriver(capabilities);
 	
-		driver = new ChromeDriver(chromeProfile);
+		
 		driver.manage().window().maximize();
 //		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}

@@ -17,6 +17,8 @@ import utility.BrowserFactory;
 public class CREATE_COMMUNITY extends BrowserFactory {
 	@BeforeTest
 	public void onMychat() throws Exception {
+		SetProperties();
+		chromeBrowser();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("welcome-dashboardPath"));
 		Thread.sleep(8000);
@@ -49,7 +51,7 @@ public class CREATE_COMMUNITY extends BrowserFactory {
 	
 	@AfterTest
 	public void naviagteTOWelcomeDashboard() throws Exception {
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		ChannelDashboard cd = new ChannelDashboard(driver);
 		cd.click_leftDrawerBtn();
 		LeftDrawer ld = new LeftDrawer(driver);

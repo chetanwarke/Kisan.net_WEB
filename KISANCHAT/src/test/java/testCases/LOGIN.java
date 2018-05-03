@@ -36,6 +36,6 @@ public class LOGIN extends BrowserFactory{
 	@AfterTest
 	public void defaultContent() throws Exception {
 		driver.switchTo().defaultContent();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 }

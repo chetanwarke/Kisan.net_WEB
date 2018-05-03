@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [test]">
-  <test name="CREATE_COMMUNITY (failed)">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="testCases.LOGIN">
-        <methods>
-          <include name="launchBrowser"/>
-          <include name="defaultContent"/>
-        </methods>
-      </class> <!-- testCases.LOGIN -->
       <class name="testCases.CREATE_COMMUNITY">
         <methods>
           <include name="createChnl"/>
@@ -16,5 +10,5 @@
         </methods>
       </class> <!-- testCases.CREATE_COMMUNITY -->
     </classes>
-  </test> <!-- CREATE_COMMUNITY (failed) -->
-</suite> <!-- Failed suite [test] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
