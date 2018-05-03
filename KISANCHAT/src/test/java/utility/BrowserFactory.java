@@ -5,6 +5,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory{
@@ -18,10 +19,13 @@ public class BrowserFactory{
 	}
 	
 	public void chromeBrowser(){
-		String path = prop.getProperty("chromedriverPath");
-		System.out.println(path);
 		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+prop.getProperty("chromedriverPath"));
-		driver = new ChromeDriver();
+		String chromeProfilePath = prop.getProperty("chromeProfilePath");
+		ChromeOptions chromeProfile = new ChromeOptions();
+//		chromeProfile.addArguments("chrome.switches", "--disable-extensions");
+		chromeProfile.addArguments("user-data-dir=" + chromeProfilePath);
+	
+		driver = new ChromeDriver(chromeProfile);
 		driver.manage().window().maximize();
 //		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
