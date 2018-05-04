@@ -23,10 +23,10 @@ public class ChannelDashboard extends BaseClass{
 	By send = By.cssSelector("i[class=\"zmdi zmdi-mail-send\"]");
 	//attachment options
 	By cameraOption = By.xpath("//a[text()=' Camera']");
-	By imageOption = By.cssSelector("#cdk-overlay-3 > div > div > button:nth-child(2)");
+	By imageOption = By.xpath("//a[text()=' Image ']");
 	By videoOption = By.xpath("//a[text()=' Video']");
 	By audioOption = By.xpath("//a[text()=' Audio']");
-	By locationOption = By.cssSelector("#cdk-overlay-4 > div > div > button:nth-child(5)");
+	By locationOption = By.cssSelector("i[class='zmdi zmdi-pin']");
 	By imageInput = By.xpath("//*[@id='file-input']");
 	//more menu options
 	By moreChannelProfileOption = By.xpath("//a[text()=' Channel Profile']");
@@ -77,13 +77,7 @@ public class ChannelDashboard extends BaseClass{
 		waitTillElementPresent(send);
 		driver.findElement(send).click();
 	}
-	//capturing image from camera
-	public void takeCameraImage() {
-		waitTillElementPresent(cameraOption);
-		driver.findElement(cameraOption).click();
-		
-		
-	}
+	
 	//sending image from local storage
 	public void sendLocalImage() {
 		
