@@ -2,6 +2,7 @@ package utility;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -20,11 +21,11 @@ public class BaseClass extends BrowserFactory{
 		this.driver = driver;
 	}
 	// set property of excel data file 
-	public String path = prop.getProperty("excelDataFilePath");
+	public String excelSheetPath = prop.getProperty("excelDataFilePath");
 	// read text input from excel sheet
 	public String readTextInput(String sheetName, int RowNum, int ColNum)throws Exception {
 		
-		  File file = new File(System.getProperty("user.dir")+path);
+		  File file = new File(System.getProperty("user.dir")+excelSheetPath);
 	      FileInputStream fis = new FileInputStream(file);
 	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
@@ -37,7 +38,7 @@ public class BaseClass extends BrowserFactory{
 	//read number input from excel sheet
 	public double readNumberInput(String sheetName, int RowNum, int ColNum)throws Exception {
 		
-		  File file = new File(System.getProperty("user.dir")+path);
+		  File file = new File(System.getProperty("user.dir")+excelSheetPath);
 	      FileInputStream fis = new FileInputStream(file);
 	      
 	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
@@ -56,6 +57,21 @@ public class BaseClass extends BrowserFactory{
 			double cellData = cell.getNumericCellValue();
 			return cellData;
 	}
+	
+	//write data in excel sheet
+	public void writeToSheet_DiscoverList(String sheetName) throws Exception {
+		File file = new File(System.getProperty("user.dir")+excelSheetPath);
+	      FileInputStream fis = new FileInputStream(file);
+	      
+	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
+	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
+	      
+	    //Create row object
+	     
+	}
+	
+	
+	
 	//wait for loader to close
 	public WebDriverWait waitForLoaderClose(By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, 60);

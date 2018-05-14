@@ -17,8 +17,8 @@ import utility.BrowserFactory;
 public class CREATE_COMMUNITY extends BrowserFactory {
 	@BeforeTest
 	public void onMychat() throws Exception {
-		SetProperties();
-		chromeBrowser();
+//		SetProperties();
+//		chromeBrowser();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("welcome-dashboardPath"));
 		Thread.sleep(8000);

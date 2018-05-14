@@ -1,7 +1,10 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import utility.BaseClass;
 
@@ -24,11 +27,21 @@ public class DiscoverPage extends BaseClass {
 	By ProfileFollowBtn = By.cssSelector("#showChannelProfileSideNav > app-show-channel-profile > div > div.profile_heading > div.plueCircle.pad-t-none.text-center.ng-star-inserted > a");
 	By ProfileMoreBtn = By.cssSelector("#showChannelProfileSideNav > app-show-channel-profile > div > div.profile_heading > div:nth-child(1) > div.text-right > div > button > span > i");
 	
-	//elements in more options
-	By optionEdit_Profile = By.xpath("//a[text()='Edit Profile']");
-	By optionInvite = By.xpath("//a[text()='Invite']");
-	By optionBlocked_Followers = By.xpath("//a[text()='Blocked Followers']");
-	By optionMute = By.xpath("//a[text()='Mute']");
-	By optionDelete_Channel = By.xpath("//a[text()='Delete Channel']");
-	By optionLeave_Channel = By.xpath("//a[text()='Leave Channel']");
+	//list of all channels
+	public void discoverList() throws Exception {
+		Thread.sleep(2000);
+		List <WebElement> chs = driver.findElements(By.cssSelector("h4[class='mrgn-t-md']"));
+		System.out.println("Total no of channels on Discover channel list : "+chs.size());
+		int i=1;
+		for(WebElement we : chs)
+		{
+			System.out.println(i+" : "+we.getText());	
+			i++;
+		}
+	}
+	
+	public void click_ChnlName(String name) {
+		
+	}
+	
 }
