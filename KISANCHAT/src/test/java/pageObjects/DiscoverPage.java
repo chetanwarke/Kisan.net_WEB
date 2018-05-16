@@ -19,6 +19,7 @@ public class DiscoverPage extends BaseClass {
 	By filterBtn = By.cssSelector("#lightergrayColorBody > app-root > app-discover-channels > mat-sidenav-container > mat-sidenav-content > div > div > mat-list > mat-list-item.searchFilter.mat-list-item > div > div.widthfull > div:nth-child(2) > div > img");
 	By searchBtn = By.cssSelector("#lightergrayColorBody > app-root > app-discover-channels > mat-sidenav-container > mat-sidenav-content > div > div > mat-list > mat-list-item.searchFilter.mat-list-item > div > div.widthfull > div:nth-child(1) > div > input");
 	By searchInput = By.cssSelector("#lightergrayColorBody > app-root > app-discover-channels > mat-sidenav-container > mat-sidenav-content > div > div > mat-list > mat-list-item.searchFilter.mat-list-item > div > div.widthfull > div:nth-child(1) > div > div > input");
+	By gotItBtn = By.xpath("//span[text()='Got It']");
 	
 	By ALLchnlList = By.cssSelector("h4[class='mrgn-t-md']");
 	
@@ -40,8 +41,24 @@ public class DiscoverPage extends BaseClass {
 		}
 	}
 	
+	//click on ok got it messagee btn
+	public void click_gotItBtn() {
+		waitTillElementPresent(gotItBtn);
+		driver.findElement(gotItBtn).click();
+	}
+	
 	public void click_ChnlName(String name) {
-		
+		List <WebElement> chs = driver.findElements(By.cssSelector("h4[class='mrgn-t-md']"));
+		for(WebElement we : chs)
+		{
+			String channel = we.getText();
+			if(name.equals(channel)) {
+				By chnlName = By.xpath("//h4[text()="+name+"]");
+				waitTillElementPresent(chnlName);
+				driver.findElement(chnlName).click();
+			}
+				
+		}
 	}
 	
 }

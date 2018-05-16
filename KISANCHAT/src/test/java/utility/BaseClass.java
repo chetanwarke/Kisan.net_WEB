@@ -3,9 +3,16 @@ package utility;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
@@ -14,6 +21,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.google.common.collect.Table.Cell;
 
 public class BaseClass extends BrowserFactory{
 	//constructor
@@ -58,16 +67,40 @@ public class BaseClass extends BrowserFactory{
 			return cellData;
 	}
 	
-	//write data in excel sheet
-	public void writeToSheet_DiscoverList(String sheetName) throws Exception {
+	//remove/delete rows fron sheet
+	public void removeSheet(String sheetName) throws Exception {
 		File file = new File(System.getProperty("user.dir")+excelSheetPath);
 	      FileInputStream fis = new FileInputStream(file);
 	      
 	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
 	      
-	    //Create row object
-	     
+//	      int lastRowNum=spreadsheet.getLastRowNum();
+	      
+	      for(int i=workbook.getNumberOfSheets()-1;i>=0;i--){
+	            XSSFSheet tmpSheet =workbook.getSheetAt(i);
+	            if(!tmpSheet.getSheetName().equals(sheetName)){
+	            	workbook.removeSheetAt(i);
+	            }
+	        }   
+	}
+	
+	
+	//write data in excel sheet
+	public void writeToSheet_DiscoverList(String sheetName) throws Exception {
+		File file = new File(System.getProperty("user.dir")+excelSheetPath);
+	      FileInputStream fis = new FileInputStream(file);
+	      
+	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
+	      XSSFSheet spreadsheet = workbook.createSheet(sheetName);
+//	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
+	    
+	      //Create row object
+	      XSSFRow row;
+	      
+	    List <WebElement> chs = driver.findElements(By.cssSelector("h4[class='mrgn-t-md']"));
+	    System.out.println("Total no of channels on Discover channel list : "+chs.size());
+	
 	}
 	
 	
