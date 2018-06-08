@@ -61,4 +61,14 @@ public class DiscoverPage extends BaseClass {
 		}
 	}
 	
+	public void click_ProfileFollowBtn() {
+		waitTillElementPresent(ProfileFollowBtn);
+		driver.findElement(ProfileFollowBtn).click();
+	}
+	
+	public void click_closeBtn() {
+		waitTillElementPresent(closeBtn);
+		driver.findElement(closeBtn).click();
+	}
+	
 }
