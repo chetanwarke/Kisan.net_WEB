@@ -11,8 +11,7 @@ import utility.BaseClass;
 public class DiscoverPage extends BaseClass {
 
 	public DiscoverPage(WebDriver driver) {
-		super(driver);
-		
+		super(driver);	
 	}
 	
 	By closeBtn = By.cssSelector("#lightergrayColorBody > app-root > app-discover-channels > mat-sidenav-container > mat-sidenav-content > div > div > mat-list > mat-list-item:nth-child(1) > div > a");
@@ -22,11 +21,6 @@ public class DiscoverPage extends BaseClass {
 	By gotItBtn = By.xpath("//span[text()='Got It']");
 	
 	By ALLchnlList = By.cssSelector("h4[class='mrgn-t-md']");
-	
-	//elements for channel profile opened
-	By ProfilecloseBtn = By.cssSelector("a[class='closeBtn']");
-	By ProfileFollowBtn = By.cssSelector("#showChannelProfileSideNav > app-show-channel-profile > div > div.profile_heading > div.plueCircle.pad-t-none.text-center.ng-star-inserted > a");
-	By ProfileMoreBtn = By.cssSelector("#showChannelProfileSideNav > app-show-channel-profile > div > div.profile_heading > div:nth-child(1) > div.text-right > div > button > span > i");
 	
 	//list of all channels
 	public void discoverList() throws Exception {
@@ -61,14 +55,8 @@ public class DiscoverPage extends BaseClass {
 		}
 	}
 	
-	public void click_ProfileFollowBtn() {
-		waitTillElementPresent(ProfileFollowBtn);
-		driver.findElement(ProfileFollowBtn).click();
-	}
-	
 	public void click_closeBtn() {
 		waitTillElementPresent(closeBtn);
 		driver.findElement(closeBtn).click();
 	}
-	
 }
