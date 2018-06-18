@@ -50,8 +50,7 @@ public class DiscoverPage extends BaseClass {
 				By chnlName = By.xpath("//h4[text()="+name+"]");
 				waitTillElementPresent(chnlName);
 				driver.findElement(chnlName).click();
-			}
-				
+			}		
 		}
 	}
 	

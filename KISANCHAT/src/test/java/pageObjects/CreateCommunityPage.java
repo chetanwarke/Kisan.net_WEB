@@ -39,7 +39,7 @@ public class CreateCommunityPage extends BaseClass {
     public void set_channelName() throws Exception {
     	waitTillElementPresent(channelName);
     	DataFile file = new DataFile(driver);
-    	String value = file.readTextInput("Channel",1, 0);
+    	String value = file.readTextInput("Channel",1, 1);
     	driver.findElement(channelName).click();
     	setText(channelName, value);
     }
@@ -53,7 +53,7 @@ public class CreateCommunityPage extends BaseClass {
     	waitTillElementPresent(colorBucketCode);
     	driver.findElement(colorBucketCode).click();
     	driver.findElement(colorBucketCode).clear();
-    	String hexCode = readTextInput("Channel", 1, 3);
+    	String hexCode = readTextInput("Channel", 1, 4);
     	setText(colorBucketCode, hexCode);
     }
     

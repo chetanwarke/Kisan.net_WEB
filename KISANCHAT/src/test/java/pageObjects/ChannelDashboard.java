@@ -21,17 +21,7 @@ public class ChannelDashboard extends BaseClass{
 	By moreBtn = By.cssSelector("#dashTopHeader > div.topRight > mat-icon:nth-child(3) > button > span > i");
 	By typeAmessage = By.cssSelector("textarea[placeholder='Type a message']");
 	By send = By.cssSelector("i[class=\"zmdi zmdi-mail-send\"]");
-	//attachment options
-	By cameraOption = By.xpath("//a[text()=' Camera']");
-	By imageOption = By.xpath("//a[text()=' Image ']");
-	By videoOption = By.xpath("//a[text()=' Video']");
-	By audioOption = By.xpath("//a[text()=' Audio']");
-	By locationOption = By.cssSelector("i[class='zmdi zmdi-pin']");
-	By imageInput = By.xpath("//*[@id='file-input']");
-	//more menu options
-	By moreChannelProfileOption = By.xpath("//a[text()=' Channel Profile']");
-	By moreInviteOption = By.xpath("//a[text()='Invite']");
-	By moreMuteOPtion = By.xpath("//a[text()='Mute']");
+	
 	
 	public void click_leftDrawerBtn() {
 		waitTillElementPresent(leftDrawerBtn);

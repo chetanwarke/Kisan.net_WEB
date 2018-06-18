@@ -31,7 +31,7 @@ public class CommunityInfoPage extends BaseClass{
 	public void set_infoTextEdit() throws Exception {
 		waitTillElementPresent(infoTextEdit);
 		driver.findElement(infoTextEdit).click();
-		String chnlInfo = readTextInput("Channel", 1, 2);
+		String chnlInfo = readTextInput("Channel", 1, 3);
 		setText(infoTextEdit, chnlInfo);
 	}
 	public void click_privateBtn() {

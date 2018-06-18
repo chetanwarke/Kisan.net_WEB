@@ -30,6 +30,20 @@ public class WelcomeDashboardPage extends BaseClass{
 		}
 	}
 	
+	public void click_ChnlName(String name) {
+		List <WebElement> chs = driver.findElements(By.cssSelector("span[class='limitChannelName']"));
+		for(WebElement we : chs)
+		{
+			String channel = we.getText();
+			if(name.equals(channel)) {
+				By chnlName = By.xpath("//span[text()="+name+"]");
+				waitTillElementPresent(chnlName);
+				driver.findElement(chnlName).click();
+			}		
+		}
+	}
+	
+	
 	public void listChannelsDetails() {
 		List <WebElement> chs = driver.findElements(By.cssSelector("span[class='limitChannelName']"));
 		

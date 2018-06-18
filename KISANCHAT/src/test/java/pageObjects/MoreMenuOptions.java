@@ -99,9 +99,7 @@ public class MoreMenuOptions extends BaseClass{
 			waitTillElementPresent(OptionLeave_Channel);
 			driver.findElement(OptionLeave_Channel).click();
 		}
-		
-
-		
+			
 	//capturing image from camera
 		public void takeCameraImage() {
 			waitTillElementPresent(OptionCamera);
