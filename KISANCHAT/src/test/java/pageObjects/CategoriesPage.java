@@ -9,7 +9,6 @@ public class CategoriesPage extends BaseClass{
 
 	public CategoriesPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	By agriculture = By.cssSelector("img[src='https://s3.ap-south-1.amazonaws.com/kisan-common/oauth-categories/agriculture.jpg']");

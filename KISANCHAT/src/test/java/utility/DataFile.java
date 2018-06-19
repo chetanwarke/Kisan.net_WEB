@@ -24,7 +24,7 @@ public class DataFile extends BaseClass{
 	      FileInputStream fis = new FileInputStream(file);
 	      
 	      //Get the workbook instance for XLSX file 
-	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
+//	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	      
 	      if(file.isFile() && file.exists()) {
 	         System.out.println("Data.xlsx file open successfully.");
